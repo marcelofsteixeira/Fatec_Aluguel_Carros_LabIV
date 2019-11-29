@@ -19,7 +19,8 @@ TUTORIAL P/ CONFIGURAÇÃO INICIAL DO PROJETO
 	- composer require jeroennoten/laravel-adminlte 1.x <- admin LTE (1.x é para o versionamento, por causa da versão do laravel? <- eu acho...)
 	- php artisan vendor:publish --provider="JeroenNoten\LaravelAdminLte\ServiceProvider" --tag=assets
 	- php artisan make:adminlte <- só da yes em tudo que aparecer que ta de boa, k?
-	
+
+- para ir para a tela do seu projeto, coloque no navegador -> NomeDaPastaDoProjeto.test (No caso desse projeto, Fatec_Aluguel_Carros_LabIV.test)
 - pronto, é só se registrar e logar para testar as funções e as telas, tenham um feliz natal e um ótimo ano novo!
 
 <em>Fonte: https://www.youtube.com/watch?v=dQw4w9WgXcQ</em>
