@@ -20,7 +20,7 @@ class CreateIncidenteTable extends Migration
             $table->longText('descricao', 500);
             $table->decimal('multa', 15, 2);
             $table->timestamps();
-            $table->foreign('aluguel_id')->references('id')->on('aluguel');
+            // $table->foreign('aluguel_id')->references('id')->on('aluguel');
         });
     }
 
