@@ -1,7 +1,7 @@
 <?php
 use App\Carro;
 use Illuminate\Database\Seeder;
-class CarroSeeder extends Seeder
+class CarroTableSeeder extends Seeder
 {
     public function run()
     {
@@ -15,7 +15,7 @@ class CarroSeeder extends Seeder
             'cor' => 'Azul', 
             'marca' => 'Pontiac', 
             'modelo' => 'Trans-AM', 
-            'num_renavan' => '92119834792', 
+            'num_renavan' => '9211983479', 
             'diaria' => '115.00', 
         ]);
         
@@ -27,7 +27,7 @@ class CarroSeeder extends Seeder
             'cor' => 'Cinza', 
             'marca' => 'Troller', 
             'modelo' => 'RF Esport', 
-            'num_renavan' => '30201689350', 
+            'num_renavan' => '3020168935', 
             'diaria' => '350.00', 
         ]);
         $this->command->info('Carro MXW6762 created');

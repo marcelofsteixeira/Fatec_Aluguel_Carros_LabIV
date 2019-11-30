@@ -1,7 +1,7 @@
 <?php
 use App\Incidente;
 use Illuminate\Database\Seeder;
-class IncidenteSeeder extends Seeder
+class IncidenteTableSeeder extends Seeder
 {
     public function run()
     {

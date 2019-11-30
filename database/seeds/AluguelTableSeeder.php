@@ -1,7 +1,7 @@
 <?php
 use App\Aluguel;
 use Illuminate\Database\Seeder;
-class AluguelSeeder extends Seeder
+class AluguelTableSeeder extends Seeder
 {
     public function run()
     {
