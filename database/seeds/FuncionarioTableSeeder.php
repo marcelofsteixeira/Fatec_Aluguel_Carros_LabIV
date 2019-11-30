@@ -1,7 +1,7 @@
 <?php
 use App\Funcionario;
 use Illuminate\Database\Seeder;
-class FuncionarioSeeder extends Seeder
+class FuncionarioTableSeeder extends Seeder
 {
     public function run()
     {

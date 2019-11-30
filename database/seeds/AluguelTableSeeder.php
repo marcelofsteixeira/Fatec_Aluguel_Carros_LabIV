@@ -1,7 +1,7 @@
 <?php
 use App\Aluguel;
 use Illuminate\Database\Seeder;
-class AluguelSeeder extends Seeder
+class AluguelTableSeeder extends Seeder
 {
     public function run()
     {
@@ -15,9 +15,9 @@ class AluguelSeeder extends Seeder
             'carro_id' => 'MPM0114',
             'preco' => '350.00',
             'funcionario_id' => '21477512004',
-            'data_aluguel' => '21/01/2019',
-            'data_entrega_esperada' => '23/01/2019',
-            'data_entrega' => '22/01/2019',
+            'data_aluguel' => '2019-01-21',
+            'data_entrega_esperada' => '2019-01-23',
+            'data_entrega' => '2019-01-22',
         ]);
         
         // Exibe uma informação no console durante o processo de seed
@@ -28,9 +28,9 @@ class AluguelSeeder extends Seeder
             'carro_id' => 'MXW6762',
             'preco' => '470.00',
             'funcionario_id' => '77749006087',
-            'data_aluguel' => '26/02/2019',
-            'data_entrega_esperada' => '28/02/2019',
-            'data_entrega' => '01/03/2019', 
+            'data_aluguel' => '2019-02-26',
+            'data_entrega_esperada' => '2019-02-28',
+            'data_entrega' => '2019-03-01', 
         ]);
         $this->command->info('Aluguel created');
     }
