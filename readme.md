@@ -15,6 +15,8 @@ TUTORIAL P/ CONFIGURAÇÃO INICIAL DO PROJETO
 	- volte para o comander
 
 	- php artisan migrate (cria as tabelas no bd)
+	- composer update
+	- composer dump-autoload
 	- php artisan db:seed (para inserir linhas no bd)
 
 - para ir para a tela do seu projeto, coloque no navegador -> NomeDaPastaDoProjeto.test (No caso desse projeto, Fatec_Aluguel_Carros_LabIV.test)
