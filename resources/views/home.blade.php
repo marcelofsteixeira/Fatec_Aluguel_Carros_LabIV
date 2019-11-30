@@ -7,5 +7,5 @@
 @stop
 
 @section('content')
-    <p style="color: red">Aqui vai vir a tabela dos carros, WOW!</p>
+    <p style="color: red">Aqui vai vir a tabela dos carros, WOW!...  OPS, MENTIRA</p>
 @stop

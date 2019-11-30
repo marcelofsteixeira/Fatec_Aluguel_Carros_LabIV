@@ -31,7 +31,7 @@ class CarroController extends Controller
     {
         $carros = Carro::all();
 
-        return view('carros.index', compact("carros"));
+        return view('carros.index', compact('carros'));
     }
 
     /**

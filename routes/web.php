@@ -26,3 +26,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Rotas do app
+Route::get('/carros', 'CarroController@index')->name('carros.index');

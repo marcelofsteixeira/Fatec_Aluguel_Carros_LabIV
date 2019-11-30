@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Aluguel Carros')
+@section('title', 'Carros Disponiveis')
 
 @section('content_header')
     <h1 style="color:blue">Carros Disponiveis</h1>
@@ -31,10 +31,10 @@
                 <tbody>
                     <@foreach($carros as $carro)>
                     <tr>
-                        <td>{{ $carro->Marca }}</td>
-                        <td>{{ $carro->Modelo }}</td>
-                        <td>{{ $carro->Placa }}</td>
-                        <td>{{ $carro->Cor }}</td>
+                        <td>{{ $carro->marca }}</td>
+                        <td>{{ $carro->modelo }}</td>
+                        <td>{{ $carro->placa }}</td>
+                        <td>{{ $carro->cor }}</td>
                         <td>
                             <!-- botão visualização -->
                             <a href="#" class="btn btn-primary btn-xs">
