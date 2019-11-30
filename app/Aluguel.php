@@ -24,7 +24,7 @@ class Aluguel extends Model
     
     public function incidentes()
     {
-        return &this->hasMany('App\Incidente');
+        return $this->hasMany('App\Incidente');
     }
 
     public function carro()

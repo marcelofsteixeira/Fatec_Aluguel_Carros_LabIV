@@ -23,6 +23,6 @@ class Cliente extends Model
 
     public function alugueis()
     {
-        return &this->hasMany('App\Aluguel');
+        return $this->hasMany('App\Aluguel');
     }
 }

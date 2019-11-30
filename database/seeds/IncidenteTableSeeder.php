@@ -12,7 +12,7 @@ class IncidenteSeeder extends Seeder
     {
         Incidente::create([
             'aluguel_id' => '1', 
-            'data' => '28/02/2019',
+            'data' => '2019/02/28',
             'descricao' => 'Batida Leve na traseira do veículo com quebra da lanteira de freio direita',
             'multa' => '100.00',
         ]);
