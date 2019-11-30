@@ -9,11 +9,17 @@ class Aluguel extends Model
     protected $table="aluguel";
 
     protected $fillable = [
-        'nome',
-        'creci',
-        'fone',
-        'email',
+        'id',
+        'cliente_id',
+        'carro_id',
+        'preco',
+        'funcionario_id',
+        'data_aluguel',
+        'data_entrega_esperada',
+        'data_entrega'
     ];
+
+    //protected $primaryKey = 'id';
 
     
     public function incidentes()

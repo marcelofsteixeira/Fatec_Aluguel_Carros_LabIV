@@ -9,11 +9,15 @@ class Carro extends Model
     protected $table="carro";
 
     protected $fillable = [
-        'nome',
-        'creci',
-        'fone',
-        'email',
+        'placa',
+        'cor',
+        'marca',
+        'modelo',
+        'num_renavan',
+        'diaria'
     ];
+
+    protected $primaryKey = 'placa';
 
     public function alugueis()
     {

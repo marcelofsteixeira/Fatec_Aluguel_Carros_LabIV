@@ -10,11 +10,18 @@ class Funcionario extends Model
     protected $table="funcionario";
 
     protected $fillable = [
+        'cpf',
         'nome',
-        'creci',
-        'fone',
+        'rg',
+        'endereco',
+        'cep',
+        'cel',
+        'tel',
         'email',
+        'cargo'
     ];
+
+    protected $primaryKey = 'cpf';
 
     public function alugueis()
     {

@@ -10,11 +10,15 @@ class Incidente extends Model
     protected $table="incidente";
 
     protected $fillable = [
-        'nome',
-        'creci',
-        'fone',
-        'email',
+        'id',
+        'aluguel_id',
+        'data',
+        'descricao',
+        'multa',
+        'descricao'
     ];
+
+    //protected $primaryKey = 'id';
 
     public function aluguel()
     {
