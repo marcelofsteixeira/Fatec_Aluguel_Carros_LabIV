@@ -91,19 +91,20 @@ class FuncionarioController extends Controller
      * @param  \App\Funcionario  $funcionario
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $cpf)
     {
 
         DB::table('funcionario')
-            ->where('id', $id)
+            ->where('cpf', $cpf)
             ->update(
                 [
                     'cpf' => $request->cpf,
                     'nome' => $request->nome,
                     'rg' => $request->rg,
                     'endereco' => $request->endereco,
-                    'tel_celular' => $request->tel_celular,
-                    'tel_residencial' => $request->tel_residencial,
+                    'cep' => $request->cep,
+                    'cel' => $request->cel,
+                    'tel' => $request->tel,
                     'email' => $request->email,
                     'cargo' => $request->cargo
 

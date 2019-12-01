@@ -37,3 +37,5 @@ Route::resource('carros', 'CarroController');
 Route::resource('alugueis', 'AluguelController');
 
 Route::resource('clientes', 'ClienteController');
+
+Route::resource('funcionarios', 'FuncionarioController');
