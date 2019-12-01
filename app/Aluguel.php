@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Aluguel extends Model
 {
     protected $table="aluguel";
+    public $keyType = 'string';
 
     protected $fillable = [
         'id',
@@ -19,7 +20,7 @@ class Aluguel extends Model
         'data_entrega'
     ];
 
-    //protected $primaryKey = 'id';
+    protected $primaryKey = 'id';
 
     
     public function incidentes()

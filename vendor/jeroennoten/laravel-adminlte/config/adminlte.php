@@ -201,6 +201,7 @@ return [
         ],
         [
             'text'       => 'Carros Alugados',
+            'url'     => '/alugueis',
             'icon_color' => 'yellow',
         ],
         [

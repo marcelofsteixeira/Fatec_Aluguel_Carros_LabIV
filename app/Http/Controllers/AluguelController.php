@@ -98,14 +98,13 @@ class AluguelController extends Controller
             ->where('id', $id)
             ->update(
                 [
-                    'id' => $request->id,
-                    'cpf_cliente' => $request->cpf_cliente,
-                    'placa_carro' => $request->placa_carro,
+                    'cliente_id' => $request->cliente_id,
+                    'carro_id' => $request->carro_id,
                     'preco' => $request->preco,
-                    'cpf_corretor' => $request->cpf_corretor,
+                    'funcionario_id' => $request->funcionario_id,
                     'data_aluguel' => $request->data_aluguel,
-                    'data_entr_esp' => $request->data_entr_esp,
-                    'data_entr' => $request->data_entr
+                    'data_entrega_esperada' => $request->data_entrega_esperada,
+                    'data_entrega' => $request->data_entrega
 
                 ]
             );

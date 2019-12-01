@@ -63,7 +63,7 @@
         </div>
         <div class='panel-footer'>
             <a href="{{route('carros.index')}}" class="btn btn-default">Voltar</a>
-            <button type="submit" class="btn btn-success">Gravar</button>
+            <button type="submit" class="btn btn-success">Alterar</button>
         </div>
 
     </div>
