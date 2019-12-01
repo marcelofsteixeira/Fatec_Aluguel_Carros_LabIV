@@ -98,13 +98,15 @@ class ClienteController extends Controller
             ->where('id', $id)
             ->update(
                 [
-                    'cpf' => $request->nome,
-                    'nome' => $request->creci,
-                    'rg' => $request->fone,
+                    'cpf' => $request->cpf,
+                    'nome' => $request->nome,
+                    'rg' => $request->rg,
                     'endereco' => $request->endereco,
-                    'tel_celular' => $request->tel_celular,
-                    'tel_residencial' => $request->tel_residencial,
+                    'cep' => $request->cep,
+                    'cel' => $request->cel,
+                    'tel' => $request->tel,
                     'email' => $request->email
+
 
                     ]
             );
