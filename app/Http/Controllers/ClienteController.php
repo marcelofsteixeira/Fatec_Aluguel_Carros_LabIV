@@ -91,11 +91,11 @@ class ClienteController extends Controller
      * @param  \App\Cliente  $cliente
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $cpf)
     {
 
         DB::table('cliente')
-            ->where('id', $id)
+            ->where('cpf', $cpf)
             ->update(
                 [
                     'cpf' => $request->cpf,
