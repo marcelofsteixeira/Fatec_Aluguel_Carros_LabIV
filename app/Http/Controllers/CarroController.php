@@ -63,10 +63,10 @@ class CarroController extends Controller
      * @param  \App\Carro  $carro
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($placa)
     {
-        $carro = Carro::find($id);
-        // select * from carro where id = $id;
+        $carro = Carro::find($placa);
+        // select * from carro where placa = $placa;
 
         return view('carros.show', compact('carro'));
     }
@@ -77,9 +77,9 @@ class CarroController extends Controller
      * @param  \App\Carro  $carro
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($placa)
     {
-        $carro = Carro::find($id);
+        $carro = Carro::find($placa);
 
         return view('carros.edit', compact('carro'));
     }
@@ -91,18 +91,18 @@ class CarroController extends Controller
      * @param  \App\Carro  $carros
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $placa)
     {
 
         DB::table('carro')
-            ->where('id', $id)
+            ->where('placa', $placa)
             ->update(
                 [
                     'placa' => $request->placa,
                     'cor' => $request->cor,
                     'marca' => $request->marca,
                     'modelo' => $request->modelo,
-                    'renavan' => $request->renavan,
+                    'num_renavan' => $request->num_renavan,
                     'diaria' => $request->diaria
                 
                 ]
@@ -117,9 +117,9 @@ class CarroController extends Controller
      * @param  \App\Carro  $carro
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($placa)
     {
-        Carro::destroy($id);
+        Carro::destroy($placa);
 
         $carros = Carro::all();
 

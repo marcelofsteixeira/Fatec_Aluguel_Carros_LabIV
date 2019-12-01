@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Carro extends Model
 {
     protected $table="carro";
+    public $keyType = 'string';
 
     protected $fillable = [
         'placa',
@@ -17,7 +18,7 @@ class Carro extends Model
         'diaria'
     ];
 
-    protected $primaryKey = 'placa';
+    public $primaryKey = 'placa';
 
     public function alugueis()
     {

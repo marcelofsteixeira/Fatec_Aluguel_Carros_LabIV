@@ -11,8 +11,8 @@
         <div class="panel-heading clearfix">
             Lista de carros
             <div class="pull-right">
-                <a href="#" class="btn btn-info"><i class="fas fa-fx fa-sync-alt"></i> Atualizar a tela</a>
-                <a href="#" class="btn btn-success"><i class="fas fa-fx fa-plus"></i> Incluir novo registro</a>
+                <a href="{{ route('carros.index') }}" class="btn btn-info"><i class="fas fa-fx fa-sync-alt"></i> Atualizar a tela</a>
+                <a href="{{ route('carros.create') }}" class="btn btn-success"><i class="fas fa-fx fa-plus"></i> Incluir novo registro</a>
             </div>
         </div>
 
@@ -37,17 +37,17 @@
                         <td>{{ $carro->cor }}</td>
                         <td>
                             <!-- botão visualização -->
-                            <a href="#" class="btn btn-primary btn-xs">
+                            <a href="{{ route('carros.show', $carro->placa) }}" class="btn btn-primary btn-xs">
                                 <i class="fas fa-fx fa-eye"></i>
                             </a>
 
                             <!-- botão alteração -->
-                            <a href="#" class="btn btn-warning btn-xs">
+                            <a href="{{ route('carros.edit', $carro->placa) }}" class="btn btn-warning btn-xs">
                                 <i class="fas fa-fx fa-pencil-alt"></i>
                             </a>
 
                             <!-- botão exclusão -->
-                            <form action="#" method="POST" onsubmit="return confirm('Você tem certeza que deseja excluir este registro?');" style="display: inline-block;">
+                            <form action="{{ route('carros.destroy', $carro->placa) }}" method="POST" onsubmit="return confirm('Você tem certeza que deseja excluir este registro?');" style="display: inline-block;">
                                 <input type="hidden" name="_method" value="DELETE">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <button type="submit" class="btn btn-xs btn-danger">

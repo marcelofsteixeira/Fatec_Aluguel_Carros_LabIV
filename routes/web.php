@@ -27,5 +27,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//Rotas do app
+/*Rotas do app
 Route::get('/carros', 'CarroController@index')->name('carros.index');
+
+Route::get('/cadastroCarro', 'CarroController@index')->name('carros.create');*/
+
+Route::resource('carros', 'CarroController');
