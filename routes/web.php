@@ -35,3 +35,5 @@ Route::get('/cadastroCarro', 'CarroController@index')->name('carros.create');*/
 Route::resource('carros', 'CarroController');
 
 Route::resource('alugueis', 'AluguelController');
+
+Route::resource('clientes', 'ClienteController');
