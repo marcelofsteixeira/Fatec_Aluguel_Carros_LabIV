@@ -39,3 +39,5 @@ Route::resource('alugueis', 'AluguelController');
 Route::resource('clientes', 'ClienteController');
 
 Route::resource('funcionarios', 'FuncionarioController');
+
+Route::resource('incidentes', 'IncidenteController');

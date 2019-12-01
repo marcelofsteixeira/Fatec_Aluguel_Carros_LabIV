@@ -98,8 +98,7 @@ class IncidenteController extends Controller
             ->where('id', $id)
             ->update(
                 [
-                    'id_inc' => $request->id_inc,
-                    'id_aluguel' => $request->id_aluguel,
+                    'aluguel_id' => $request->aluguel_id,
                     'data' => $request->data,
                     'descricao' => $request->descricao,
                     'multa' => $request->multa
