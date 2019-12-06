@@ -1,7 +1,7 @@
 <h2 align="center">Projeto LAB IV - Larag-On-Wheels</h2>
 <br>
 <ul>
-	<li>O intutito desse projeto é criar uma aplicação web para o gerenciamento de uma empresa que presta serviços de aluguel de carros, com os conhecimentos adquiridos nas aulas de LAB IV do 4º Sem. de B.D. da FATEC Prof. Jesse Vidal, referentes ao servidor de aplicações <a href="https://laragon.org" target="_blank">Laragon</a> e ao framework para PHP <a href="https://laravel.com" target="_blank">Laravel</a>.
+	<li>O intutito desse projeto é criar uma aplicação web para o gerenciamento de uma empresa que presta serviços de aluguel de carros, com os conhecimentos adquiridos nas aulas de LAB IV do 4º Sem. de B.D. da FATEC Prof. Jessen Vidal, referentes ao servidor de aplicações <a href="https://laragon.org" target="_blank">Laragon</a> e ao framework para PHP <a href="https://laravel.com" target="_blank">Laravel</a>.
 	</li>
 </ul>
 <br>
