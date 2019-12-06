@@ -30,4 +30,4 @@
 	</tr>
 </table>
 <br>
-Gist com o antigo tutorial de configuração inicial do projeto no Laragon: <a href="https://gist.github.com/JeanLPierro/b7df804ef35def2f8d45c5d9ab2b2cb3.js">Tutorial</a>
+Gist com o antigo tutorial de configuração inicial do projeto no Laragon: <a href="https://gist.github.com/JeanLPierro/b7df804ef35def2f8d45c5d9ab2b2cb3">Tutorial</a>
