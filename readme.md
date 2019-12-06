@@ -1,34 +1,33 @@
-TUTORIAL P/ CONFIGURAÇÃO INICIAL DO PROJETO
---------------------------------------------
-
-- abre pasta do projeto no cmder
-
-	```
-	composer install
-	```
-
-	- abre o menu Heidi SQL 
-	*dependendo do seu laragon não é necessário a inserção de senha para entrar, mas caso precise a senha padrão geralmente é "root"*
-
-	- Abre a janela de consulta
-	- Digite "CREATE DATABASE #nomeDaSuaDatabaseNoArquivoAqui.env;"
-	- Rode o comando
-	- Pare o serviço e troque o nome e a senha da database para o correspondente do arquivo .env
-
-	- volte para o comander
-
-	```
-	php artisan migrate 
-	```
-	*cria as tabelas no bd*
-	```
-	composer update
-	composer dump-autoload
-	php artisan db:seed 
-	```
-	*para inserir linhas no bd*
-
-- para ir para a tela do seu projeto, coloque no navegador -> NomeDaPastaDoProjeto.test (No caso desse projeto, Fatec_Aluguel_Carros_LabIV.test)
-- pronto, é só se registrar e logar para testar as funções e as telas, tenham um feliz natal e um ótimo ano novo!
-
-<em>Fonte: https://www.youtube.com/watch?v=dQw4w9WgXcQ</em>
+<h2 align="center">Projeto LAB IV - Larag-On-Wheels</h2>
+<br>
+<ul>
+	<li>O intutito desse projeto é criar uma aplicação web para o gerenciamento de uma empresa que presta serviços de aluguel de carros, com os conhecimentos adquiridos nas aulas de LAB IV do 4º Sem. de B.D. da FATEC Prof. Jesse Vidal, referentes ao servidor de aplicações <a href="https://laragon.org" target="_blank">Laragon</a> e ao framework para PHP <a href="https://laravel.com" target="_blank">Laravel</a>.
+	</li>
+</ul>
+<br>
+<p><strong>AFAZERES:</strong></p>
+<table>
+	<tr>
+		<th>Incluir Funcionalidades</th>
+	</tr>
+	<tr>
+		<td>Duplicação de tabela</td>
+	</tr>
+	<tr>
+		<td>Botão de indisponibilizar carro</td>
+	</tr>
+	<tr>
+		<td>Alteração das tabelas de Carros</td>
+	</tr>
+	<tr>
+		<td>Alguma coisa</td>
+	</tr>
+	<tr>
+		<td>eu não lembro de cabeça então vou escrever qualquer coisa</td>
+	</tr>
+	<tr>
+		<td>“Era isto a vida? — direi à morte. Pois bem: repita-se!”</td>
+	</tr>
+</table>
+<br>
+Gist com o antigo tutorial de configuração inicial do projeto no Laragon: <a href="https://gist.github.com/JeanLPierro/b7df804ef35def2f8d45c5d9ab2b2cb3.js">Tutorial</a>
