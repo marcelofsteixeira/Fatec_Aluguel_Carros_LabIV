@@ -22,13 +22,10 @@
                     <tr>
                         <th>CPF</th>
                         <th>Nome</th>
-                        <th>RG</th>
-                        <th>Endereço</th>
-                        <th>CEP</th>
                         <th>Celular</th>
-                        <th>Telefone</th>
                         <th>Email</th>
                         <th>Cargo</th>
+                        <th>Ações</th>
 
                     </tr>
                 </thead>
@@ -38,11 +35,7 @@
                     <tr>
                         <td>{{ $funcionario->cpf }}</td>
                         <td>{{ $funcionario->nome }}</td>
-                        <td>{{ $funcionario->rg }}</td>
-                        <td>{{ $funcionario->endereco }}</td>
-                        <td>{{ $funcionario->cep }}</td>
                         <td>{{ $funcionario->cel }}</td>
-                        <td>{{ $funcionario->tel }}</td>
                         <td>{{ $funcionario->email }}</td>
                         <td>{{ $funcionario->cargo }}</td>
 
