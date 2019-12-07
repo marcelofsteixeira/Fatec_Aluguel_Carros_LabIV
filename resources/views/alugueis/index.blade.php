@@ -55,11 +55,48 @@
                                 </button>
                             </form>
 
+                            <button data-toggle="modal" data-target="#incidenteModal" class="btn btn-danger btn-xs">
+                                <i class="fas fa-car-crash"></i>
+                            </button>
+
                         </td>
                     </tr>
                     <@endforeach>
                 </tbody>
             </table>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="incidenteModal" tabindex="-1" role="dialog" aria-labelledby="incidenteModalTitle" aria-hidden="true">
+        <form action="{{ route('incidentes.store') }}" method="post" enctype="multipart/form-data">
+                {{ csrf_field() }}
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" style="color:red; text-align: center;">Indisponibilizar Carro</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label for="aluguel_id">ID do aluguel</label>
+                    <input type="text" name="aluguel_id" id="aluguel_id" class="form-control">
+                    <br>
+                    <label for="data">Data do Incidente</label>
+                    <input type="date" name="data" id="data" class="form-control">
+                    <br>
+                    <label for="descricao">Descrição do Acidente</label>
+                    <input type="text" name="descricao" id="descricao" class="form-control">
+                    <br>
+                    <label for="multa">Valor da Multa</label>
+                    <input type="number" name="multa" id="multa" class="form-control">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-danger">Registrar Incidente</button>
+        </form>
+                </div>
+                </div>
+            </div>
         </div>
     </div>
 @stop

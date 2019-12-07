@@ -15,7 +15,6 @@ class Incidente extends Model
         'data',
         'descricao',
         'multa',
-        'descricao'
     ];
 
     //protected $primaryKey = 'id';
