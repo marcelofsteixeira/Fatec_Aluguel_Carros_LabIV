@@ -15,12 +15,14 @@ class CreateIncidenteTable extends Migration
     {
         Schema::create('incidente', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('aluguel_id');
+            $table->integer('aluguel_id')->unsigned();
             $table->date('data', 15);
             $table->longText('descricao', 500);
             $table->decimal('multa', 15, 2);
-            $table->timestamps();
-            // $table->foreign('aluguel_id')->references('id')->on('aluguel');
+        });
+
+        Schema::table('incidente', function($table) {
+            $table->foreign('aluguel_id')->references('id')->on('aluguel');
         });
     }
 
