@@ -87,7 +87,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://github.com/marcelofsteixeira/Fatec_Aluguel_Carros_LabIV" target="_blank" style="background-color:grey;"><strong>Repositório da Aplicação</strong></a>
+                    <a href="https://github.com/marcelofsteixeira/Fatec_Aluguel_Carros_LabIV" target="_blank" style="background-color:grey;"><strong style="color:white;">Repositório da Aplicação</strong></a>
                 </div>
             </div>
         </div>
