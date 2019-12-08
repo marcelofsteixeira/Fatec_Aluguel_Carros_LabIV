@@ -1,15 +1,15 @@
 @extends('adminlte::page')
 
-@section('title', 'Carros Disponiveis')
+@section('title', 'Carros')
 
 @section('content_header')
-    <h1 style="color:blue">Carros Disponiveis</h1>
+    <h1 style="color:blue">Carros</h1>
 @stop
 
 @section('content')
     <div class="panel panel-default">
         <div class="panel-heading clearfix">
-            Lista de carros
+            Lista de carros disponiveis
             <div class="pull-right">
                 <a href="{{ route('carros.index') }}" class="btn btn-info"><i class="fas fa-fx fa-sync-alt"></i> Atualizar a tela</a>
                 <a href="{{ route('carros.create') }}" class="btn btn-success"><i class="fas fa-fx fa-plus"></i> Incluir novo registro</a>
@@ -29,25 +29,83 @@
                 </thead>
 
                 <tbody>
-                    <@foreach($carros as $carro)>
+                    <@foreach($carrosDisp as $carrosDisp)>
                     <tr>
-                        <td>{{ $carro->marca }}</td>
-                        <td>{{ $carro->modelo }}</td>
-                        <td>{{ $carro->placa }}</td>
-                        <td>{{ $carro->cor }}</td>
+                        <td>{{ $carrosDisp->marca }}</td>
+                        <td>{{ $carrosDisp->modelo }}</td>
+                        <td>{{ $carrosDisp->placa }}</td>
+                        <td>{{ $carrosDisp->cor }}</td>
                         <td>
                             <!-- botão visualização -->
-                            <a href="{{ route('carros.show', $carro->placa) }}" class="btn btn-primary btn-xs">
+                            <a href="{{ route('carros.show', $carrosDisp->placa) }}" class="btn btn-primary btn-xs">
                                 <i class="fas fa-fx fa-eye"></i>
                             </a>
 
                             <!-- botão alteração -->
-                            <a href="{{ route('carros.edit', $carro->placa) }}" class="btn btn-warning btn-xs">
+                            <a href="{{ route('carros.edit', $carrosDisp->placa) }}" class="btn btn-warning btn-xs">
                                 <i class="fas fa-fx fa-pencil-alt"></i>
                             </a>
 
                             <!-- botão exclusão -->
-                            <form action="{{ route('carros.destroy', $carro->placa) }}" method="POST" onsubmit="return confirm('Você tem certeza que deseja excluir este registro?');" style="display: inline-block;">
+                            <form action="{{ route('carros.destroy', $carrosDisp->placa) }}" method="POST" onsubmit="return confirm('Você tem certeza que deseja excluir este registro?');" style="display: inline-block;">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <button type="submit" class="btn btn-xs btn-danger">
+                                    <i class="fas fa-fx fa-trash-alt"></i>
+                                </button>
+                            </form>
+
+                        </td>
+                    </tr>
+                    <@endforeach>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+            Lista de carros indisponiveis
+            <div class="pull-right">
+                <a href="{{ route('carros.index') }}" class="btn btn-info"><i class="fas fa-fx fa-sync-alt"></i> Atualizar a tela</a>
+                <a href="{{ route('carros.create') }}" class="btn btn-success"><i class="fas fa-fx fa-plus"></i> Incluir novo registro</a>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <table id="table-indisponiveis" class="table table-bordered table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Placa</th>
+                        <th>Cor</th>
+                        <th>Açoes</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <@foreach($carrosIndisp as $carrosIndisp)>
+                    <tr>
+                        <td>{{ $carrosIndisp->marca }}</td>
+                        <td>{{ $carrosIndisp->modelo }}</td>
+                        <td>{{ $carrosIndisp->placa }}</td>
+                        <td>{{ $carrosIndisp->cor }}</td>
+                        <td>
+                            <!-- botão visualização -->
+                            <a href="{{ route('carros.show', $carrosIndisp->placa) }}" class="btn btn-primary btn-xs">
+                                <i class="fas fa-fx fa-eye"></i>
+                            </a>
+
+                            <!-- botão alteração -->
+                            <a href="{{ route('carros.edit', $carrosIndisp->placa) }}" class="btn btn-warning btn-xs">
+                                <i class="fas fa-fx fa-pencil-alt"></i>
+                            </a>
+
+                            <!-- botão exclusão -->
+                            <form action="{{ route('carros.destroy', $carrosIndisp->placa) }}" method="POST" onsubmit="return confirm('Você tem certeza que deseja excluir este registro?');" style="display: inline-block;">
                                 <input type="hidden" name="_method" value="DELETE">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <button type="submit" class="btn btn-xs btn-danger">

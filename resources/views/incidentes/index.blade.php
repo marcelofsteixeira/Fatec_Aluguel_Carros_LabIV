@@ -24,6 +24,7 @@
                         <th>Data</th>
                         <th>Descrição</th>
                         <th>multa</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
 
