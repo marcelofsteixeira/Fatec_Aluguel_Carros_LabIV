@@ -21,6 +21,8 @@ class CreateCarroTable extends Migration
             $table->string('modelo', 15);
             $table->string('num_renavan', 10);
             $table->decimal('diaria', 15, 2);
+            $table->boolean('alugado')->default(false);
+            $table->boolean('disponivel')->default(true);
             $table->timestamps();        
         });
     }
