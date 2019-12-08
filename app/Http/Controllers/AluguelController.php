@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Aluguel;
 use App\Cliente;
 use App\Carro;
+use App\Funcionario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -46,7 +47,8 @@ class AluguelController extends Controller
     {
         $clientes = Cliente::all();
         $carros = Carro::all();
-        return view('alugueis.create', compact ('clientes', 'carros'));
+        $funcionarios = Funcionario::all();
+        return view('alugueis.create', compact ('clientes', 'carros', 'funcionarios'));
     }
 
     /**
