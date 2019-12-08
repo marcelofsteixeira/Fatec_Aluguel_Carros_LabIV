@@ -29,9 +29,10 @@ class CarroController extends Controller
      */
     public function index()
     {
-        $carros = Carro::all();
-
-        return view('carros.index', compact('carros'));
+        $carrosDisp = Carro::all()->where('disponivel', true);
+        $carrosIndisp = Carro::all()->where('disponivel', false);
+    
+        return view('carros.index', compact('carrosDisp','carrosIndisp'));
     }
 
     /**

@@ -30,9 +30,9 @@ return [
     |
     */
 
-    'logo' => '<i class="fas fa fa-car"></i> <strong>Larag-on-Wheels</strong>',
+    'logo' => '<b>Admin</b>LTE',
 
-    'logo_mini' => '<i class="fas fa fa-car"></i>',
+    'logo_mini' => '<b>A</b>LT',
 
     /*
     |--------------------------------------------------------------------------
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'skin' => 'red',
+    'skin' => 'blue',
 
     /*
     |--------------------------------------------------------------------------
@@ -71,7 +71,7 @@ return [
     |
     */
 
-    'collapse_sidebar' => true,
+    'collapse_sidebar' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -89,7 +89,7 @@ return [
     |
     */
 
-    'right_sidebar' => true,
+    'right_sidebar' => false,
     'right_sidebar_icon' => 'fas fa-cogs',
     'right_sidebar_theme' => 'dark',
     'right_sidebar_slide' => true,
@@ -132,31 +132,31 @@ return [
             'text' => 'search',
             'search' => true,
         ],
-        ['header' => 'Menu Lateral'],
+        ['header' => 'main_navigation'],
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
-        /*[
+        [
             'text'        => 'pages',
             'url'         => 'admin/pages',
             'icon'        => 'far fa-file',
             'label'       => 4,
             'label_color' => 'success',
-        ],*/
-        ['header' => 'Contas'],
-        [
-            'text' => 'Funcionários',
-            'url'  => '/funcionarios',
-            'icon' => 'far fa-id-card',
         ],
+        ['header' => 'account_settings'],
         [
-            'text' => 'Clientes',
-            'url'  => '/clientes',
+            'text' => 'profile',
+            'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
         ],
-        /*[
+        [
+            'text' => 'change_password',
+            'url'  => 'admin/settings',
+            'icon' => 'fas fa-fw fa-lock',
+        ],
+        [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
@@ -193,23 +193,19 @@ return [
                     'url'  => '#',
                 ],
             ],
-        ],*/
-        ['header' => 'Gerenciamento de Aluguéis e Veículos'],
+        ],
+        ['header' => 'labels'],
         [
-            'text'       => 'Carros Indisponiveis',
-            'url'     => '/incidentes',
+            'text'       => 'important',
             'icon_color' => 'red',
         ],
         [
-            'text'       => 'Carros Alugados',
-            'url'     => '/alugueis',
-            'url'     => '/alugueis',
+            'text'       => 'warning',
             'icon_color' => 'yellow',
         ],
         [
-            'text'       => 'Carros Disponiveis',
-            'url'     => '/carros',
-            'icon_color' => 'green',
+            'text'       => 'information',
+            'icon_color' => 'aqua',
         ],
     ],
 

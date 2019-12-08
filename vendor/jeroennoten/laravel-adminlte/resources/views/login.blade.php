@@ -1,14 +1,7 @@
 @extends('adminlte::master')
 
-@section('title', 'Login')
-
 @section('adminlte_css')
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/vendor/icheck-bootstrap/icheck-bootstrap.min.css') }}">
-    <style>
-            html, body {
-                background-color: #FE2E2E;
-            }
-    </style>
     @yield('css')
 @stop
 
@@ -21,7 +14,7 @@
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">
-            <p class="login-box-msg">Faça login para acessar sua conta</p>
+            <p class="login-box-msg">{{ trans('adminlte::adminlte.login_message') }}</p>
             <form action="{{ url(config('adminlte.login_url', 'login')) }}" method="post">
                 {{ csrf_field() }}
 
@@ -37,7 +30,7 @@
                 </div>
                 <div class="form-group has-feedback {{ $errors->has('password') ? 'has-error' : '' }}">
                     <input type="password" name="password" class="form-control"
-                           placeholder="Senha">
+                           placeholder="{{ trans('adminlte::adminlte.password') }}">
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     @if ($errors->has('password'))
                         <span class="help-block">
@@ -49,13 +42,13 @@
                     <div class="col-xs-8">
                         <div class="icheck-primary">
                             <input type="checkbox" name="remember" id="remember">
-                            <label for="remember">Lembre de mim</label>
+                            <label for="remember">{{ trans('adminlte::adminlte.remember_me') }}</label>
                         </div>
                     </div>
                     <!-- /.col -->
                     <div class="col-xs-4">
                         <button type="submit" class="btn btn-primary btn-block btn-flat">
-                            Logar
+                            {{ trans('adminlte::adminlte.sign_in') }}
                         </button>
                     </div>
                     <!-- /.col -->
@@ -64,13 +57,13 @@
             <br>
             <p>
                 <a href="{{ url(config('adminlte.password_reset_url', 'password/reset')) }}" class="text-center">
-                    Esqueci minha senha
+                    {{ trans('adminlte::adminlte.i_forgot_my_password') }}
                 </a>
             </p>
             @if (config('adminlte.register_url', 'register'))
                 <p>
                     <a href="{{ url(config('adminlte.register_url', 'register')) }}" class="text-center">
-                        Fazer novo cadastro
+                        {{ trans('adminlte::adminlte.register_a_new_membership') }}
                     </a>
                 </p>
             @endif
