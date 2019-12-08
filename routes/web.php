@@ -27,6 +27,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// Route::get('/carros/disponibilizar/{placa}', function ($placa) {
+// });
 /*Rotas do app
 Route::get('/carros', 'CarroController@index')->name('carros.index');
 

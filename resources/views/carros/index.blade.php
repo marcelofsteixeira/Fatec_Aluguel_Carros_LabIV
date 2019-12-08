@@ -46,6 +46,18 @@
                                 <i class="fas fa-fx fa-pencil-alt"></i>
                             </a>
 
+                            <!-- <a href="{{ route('disponibilizar', $carro->placa) }}" class="btn btn-warning btn-xs">
+                                <i class="fas fa-adjust"></i>
+                            </a> -->
+                            
+                            <!-- <form action="{{ route('disponibilizar', $carro->placa, ['isDisponivel' => false]) }}" method="POST" onsubmit="return confirm('Você tem certeza que deseja indisponibilizar este registro?');" style="display: inline-block;">
+                                <!-- <input type="hidden" name="_method" value="UPDATE"> -->
+                                <!-- <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <button type="submit" class="btn btn-xs btn-danger">
+                                    <i class="fas fa-adjust"></i>
+                                </button>
+                            </form> -->
+
                             <!-- botão exclusão -->
                             <form action="{{ route('carros.destroy', $carro->placa) }}" method="POST" onsubmit="return confirm('Você tem certeza que deseja excluir este registro?');" style="display: inline-block;">
                                 <input type="hidden" name="_method" value="DELETE">
