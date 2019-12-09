@@ -30,18 +30,21 @@ class Aluguel extends Model
 
     public function carro()
     {
-        return $this->belongsTo('App\Carro');
+        return $this->belongsTo(Carro::class, 'carro_id');
     }
 
     public function funcionario()
     {
-        return $this->belongsTo('App\Funcionario');
+        return $this->belongsTo(Funcionario::class, 'funcionario_id');
     }
 
     public function cliente()
     {
-        return $this->belongsTo('App\Cliente');
+        return $this->belongsTo(Cliente::class, 'cliente_id');
     }
+
+    
+
 
 
 }

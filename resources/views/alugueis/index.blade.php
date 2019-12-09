@@ -31,9 +31,9 @@
                 <tbody>
                     <@foreach($alugueis as $aluguel)>
                     <tr>
-                        <td>{{ $aluguel->cliente_id }}</td>
-                        <td>{{ $aluguel->funcionario_id }}</td>
-                        <td>{{ $aluguel->carro_id }}</td>
+                        <td>{{ $aluguel->cliente->nome }} (CPF: {{ $aluguel->cliente->cpf }})</td>
+                        <td>{{ $aluguel->funcionario->nome }} (CPF: {{ $aluguel->funcionario->cpf }})</td>
+                        <td>{{ $aluguel->carro->marca }} {{ $aluguel->carro->modelo }} {{ $aluguel->carro->cor }} ({{ $aluguel->carro->placa }})</td>
                         <td>{{ $aluguel->data_entrega_esperada }}</td>
                         <td>
                             <!-- botão visualização -->

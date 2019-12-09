@@ -24,19 +24,28 @@
 
         <div class="row">
             <div class="col-sm-3">
-                <h3>CPF do Cliente</h3>
+                <h3>Carro</h3>
             </div>
             <div class="col-sm-10" style="color:blue;">
-                {{ $aluguel->cliente_id }}
+                {{ $aluguel->carro->marca }} {{ $aluguel->carro->modelo }} {{ $aluguel->carro->cor }} ({{ $aluguel->carro->placa }})
             </div>
         </div>
 
         <div class="row">
             <div class="col-sm-3">
-                <h3>CPF do Funcionário</h3>
+                <h3>Cliente</h3>
             </div>
             <div class="col-sm-10" style="color:blue;">
-                {{$aluguel->funcionario_id}}
+                {{ $aluguel->cliente->nome }} (CPF: {{ $aluguel->cliente->cpf }})
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <h3>Funcionário</h3>
+            </div>
+            <div class="col-sm-10" style="color:blue;">
+            {{ $aluguel->funcionario->nome }} (CPF: {{ $aluguel->funcionario->cpf }})
             </div>
         </div>
 
@@ -71,9 +80,11 @@
             <div class="col-sm-3">
                 <h3>Data da Entrega</h3>
             </div>
-            <div class="col-sm-10" style="color:blue;">
-                {{$aluguel->data_entrega}}
-            </div>
+                @if(date('Y', strtotime($aluguel->data_entrega)) < 1900)
+                <div class="col-sm-10" style="color:blue;">Não Entregue</div>
+                @else
+                <div class="col-sm-10" style="color:blue;">{{$aluguel->data_entrega}}</div>
+                @endif
         </div>
     </div>
 
