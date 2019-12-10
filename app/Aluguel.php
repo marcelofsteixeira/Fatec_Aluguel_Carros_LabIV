@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Aluguel extends Model
 {
@@ -43,8 +44,10 @@ class Aluguel extends Model
         return $this->belongsTo(Cliente::class, 'cliente_id');
     }
 
-    
-
-
-
+    public static function encerrarAluguel($id){
+        $aluguel = Aluguel::find($id);
+        $date = Carbon::now();
+        $aluguel->data_entrega= $date;
+        $aluguel->save();
+    }
 }

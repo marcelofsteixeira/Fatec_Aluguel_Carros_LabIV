@@ -34,6 +34,8 @@ Route::get('/carros', 'CarroController@index')->name('carros.index');
 
 Route::get('/cadastroCarro', 'CarroController@index')->name('carros.create');*/
 
+Route::get('/encerrarAluguel/{id}', 'AluguelController@encerrarAluguel')->name('encAlu');
+
 Route::resource('carros', 'CarroController');
 
 Route::resource('alugueis', 'AluguelController');

@@ -133,4 +133,13 @@ class AluguelController extends Controller
 
         return view('alugueis.index', compact('alugueis'));
     }
+
+    public static function encerrarAluguel($id)
+    {
+        Aluguel::encerrarAluguel($id);
+        $alugueis = Aluguel::all();
+        return view('alugueis.index', compact('alugueis'));
+    }
+
+
 }

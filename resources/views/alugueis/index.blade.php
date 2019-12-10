@@ -37,12 +37,12 @@
                         <td>{{ $aluguel->data_entrega_esperada }}</td>
                         <td>
                             <!-- botão visualização -->
-                            <a href="{{ route('alugueis.show', $aluguel->id) }}" class="btn btn-primary btn-xs">
+                            <a href="{{ route('alugueis.show', $aluguel->id) }}" class="btn btn-primary btn-xs" title="Visualizar Informações">
                                 <i class="fas fa-fx fa-eye"></i>
                             </a>
 
                             <!-- botão alteração -->
-                            <a href="{{ route('alugueis.edit', $aluguel->id) }}" class="btn btn-warning btn-xs">
+                            <a href="{{ route('alugueis.edit', $aluguel->id) }}" class="btn btn-warning btn-xs" title="Editar Informações">
                                 <i class="fas fa-fx fa-pencil-alt"></i>
                             </a>
 
@@ -50,22 +50,33 @@
                             <form action="{{ route('alugueis.destroy', $aluguel->id) }}" method="POST" onsubmit="return confirm('Você tem certeza que deseja excluir este registro?');" style="display: inline-block;">
                                 <input type="hidden" name="_method" value="DELETE">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <button type="submit" class="btn btn-xs btn-danger">
+                                <button type="submit" class="btn btn-xs btn-danger" title="Remover Aluguel" >
                                     <i class="fas fa-fx fa-trash-alt"></i>
                                 </button>
                             </form>
 
-                            <button data-toggle="modal" data-target="#incidenteModal" class="btn btn-danger btn-xs">
+                            <!-- botão incidentes -->
+                            @if(date('Y', strtotime($aluguel->data_entrega)) < 1900)
+                            <button data-toggle="modal" data-target="#incidenteModal" class="btn btn-danger btn-xs" title="Inserir Incidente">
                                 <i class="fas fa-car-crash"></i>
                             </button>
+                            @endif
 
+                            <!-- botão encerrar aluguel -->
+                            @if(date('Y', strtotime($aluguel->data_entrega)) < 1900)
+                            <form onsubmit="return confirm('Encerrar Aluguel?');" style="display: inline-block;">
+                            <button type="button" onclick="alert('Encerrando aluguel do carro {{ $aluguel->carro->modelo }} {{ $aluguel->carro->cor }} do cliente {{ $aluguel->cliente->nome }}'); window.location='{{ route("encAlu",array($aluguel->id)) }}';" class="btn btn-info btn-xs" title="Finalizar Aluguel">
+                                <i class="fas fa-car-side"></i>
+                            </button>
+                            </form>
+                            @endif
                         </td>
                     </tr>
                     <@endforeach>
                 </tbody>
             </table>
         </div>
-        <!-- Modal -->
+        <!-- Modal Incidentes -->
         <div class="modal fade" id="incidenteModal" tabindex="-1" role="dialog" aria-labelledby="incidenteModalTitle" aria-hidden="true">
         <form action="{{ route('incidentes.store') }}" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
@@ -79,7 +90,7 @@
                 </div>
                 <div class="modal-body">
                     <label for="aluguel_id">ID do aluguel</label>
-                    <input type="text" name="aluguel_id" id="aluguel_id" class="form-control">
+                    <input type="text" name="aluguel_id" value="{{ $aluguel->id }}" id="aluguel_id" class="form-control" readonly>
                     <br>
                     <label for="data">Data do Incidente</label>
                     <input type="date" name="data" id="data" class="form-control">
