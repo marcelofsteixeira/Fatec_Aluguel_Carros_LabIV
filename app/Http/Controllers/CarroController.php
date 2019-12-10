@@ -31,8 +31,9 @@ class CarroController extends Controller
     {
         $carrosDisp = Carro::all()->where('disponivel', true);
         $carrosIndisp = Carro::all()->where('disponivel', false);
+        $carrosAlugados = Carro::all()->where('alugado', true);
     
-        return view('carros.index', compact('carrosDisp','carrosIndisp'));
+        return view('carros.index', compact('carrosDisp','carrosIndisp','carrosAlugados'));
     }
 
     /**

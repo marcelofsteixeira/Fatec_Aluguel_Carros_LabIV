@@ -120,6 +120,65 @@
             </table>
         </div>
     </div>
+
+
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+            Lista de carros alugados
+            <div class="pull-right">
+                <a href="{{ route('carros.index') }}" class="btn btn-info"><i class="fas fa-fx fa-sync-alt"></i> Atualizar a tela</a>
+                <a href="{{ route('carros.create') }}" class="btn btn-success"><i class="fas fa-fx fa-plus"></i> Incluir novo registro</a>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <table id="table-indisponiveis" class="table table-bordered table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Placa</th>
+                        <th>Cor</th>
+                        <th>Açoes</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <@foreach($carrosAlugados as $carrosAlugados)>
+                    <tr>
+                        <td>{{ $carrosAlugados->marca }}</td>
+                        <td>{{ $carrosAlugados->modelo }}</td>
+                        <td>{{ $carrosAlugados->placa }}</td>
+                        <td>{{ $carrosAlugados->cor }}</td>
+                        <td>
+                            <!-- botão visualização -->
+                            <a href="{{ route('carros.show', $carrosIndisp->placa) }}" class="btn btn-primary btn-xs">
+                                <i class="fas fa-fx fa-eye"></i>
+                            </a>
+
+                            <!-- botão alteração -->
+                            <a href="{{ route('carros.edit', $carrosIndisp->placa) }}" class="btn btn-warning btn-xs">
+                                <i class="fas fa-fx fa-pencil-alt"></i>
+                            </a>
+
+                            <!-- botão exclusão -->
+                            <form action="{{ route('carros.destroy', $carrosIndisp->placa) }}" method="POST" onsubmit="return confirm('Você tem certeza que deseja excluir este registro?');" style="display: inline-block;">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <button type="submit" class="btn btn-xs btn-danger">
+                                    <i class="fas fa-fx fa-trash-alt"></i>
+                                </button>
+                            </form>
+
+                        </td>
+                    </tr>
+                    <@endforeach>
+                </tbody>
+            </table>
+        </div>
+    </div>
 @stop
 
 @section('css')
