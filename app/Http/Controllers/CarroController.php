@@ -29,7 +29,11 @@ class CarroController extends Controller
      */
     public function index()
     {
-        $carrosDisp = Carro::all()->where('disponivel', true);
+       $carrosDisp = DB::table('Carro')->where([
+        ['disponivel', true],
+        ['alugado', false],
+        ])->get();
+
         $carrosIndisp = Carro::all()->where('disponivel', false);
         $carrosAlugados = Carro::all()->where('alugado', true);
     

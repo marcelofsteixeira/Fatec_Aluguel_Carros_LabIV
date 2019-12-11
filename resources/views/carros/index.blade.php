@@ -134,7 +134,7 @@
         </div>
 
         <div class="panel-body">
-            <table id="table-indisponiveis" class="table table-bordered table-hover table-striped">
+            <table id="table-alugados" class="table table-bordered table-hover table-striped">
                 <thead>
                     <tr>
                         <th>Marca</th>
@@ -188,6 +188,16 @@
 <script>
 $(document).ready(function() {
     $('#table-carros').DataTable({
+        language: {
+            url: "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json",
+        },
+   });
+   $('#table-indisponiveis').DataTable({
+        language: {
+            url: "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json",
+        },
+   });
+   $('#table-alugados').DataTable({
         language: {
             url: "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json",
         },
