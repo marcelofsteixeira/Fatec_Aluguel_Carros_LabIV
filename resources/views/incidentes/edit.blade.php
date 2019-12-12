@@ -20,28 +20,28 @@
             <div class="row">
                 <div class="form-group col-sm-4">
                     <label for="aluguel_id">ID do aluguel</label>
-                    <input type="number" name="aluguel_id" id="aluguel_id" class="form-control" required>
+                    <input type="number" name="aluguel_id" id="aluguel_id" class="form-control" value="{{ $incidente->aluguel_id }}" required>
                 </div>
             </div>
 
             <div class="row">
                 <div class="form-group col-sm-2">
                     <label for="data">Data do incidente</label>
-                    <input type="date" name="data" id="data" class="form-control">
+                    <input type="date" name="data" id="data" class="form-control" value="{{ $incidente->data }}">
                 </div>
             </div>
 
             <div class="row">
                 <div class="form-group col-sm-5">
                     <label for="descricao">Descrição</label>
-                    <input type="text" name="descricao" id="descricao" class="form-control" required>
+                    <input type="text" name="descricao" id="descricao" class="form-control" value="{{ $incidente->descricao }}" required>
                 </div>
             </div>
 
             <div class="row">
                 <div class="form-group col-sm-5">
                     <label for="multa">Multa</label>
-                    <input type="number" name="multa" id="multa" class="form-control">
+                    <input type="number" name="multa" id="multa" class="form-control" value="{{ $incidente->multa }}">
                 </div>
             </div>
         </div>

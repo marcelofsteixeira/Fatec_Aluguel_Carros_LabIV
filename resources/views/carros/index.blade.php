@@ -29,25 +29,25 @@
                 </thead>
 
                 <tbody>
-                    <@foreach($carrosDisp as $carrosDisp)>
+                    <@foreach($carrosDisp as $carroDisp)>
                     <tr>
-                        <td>{{ $carrosDisp->marca }}</td>
-                        <td>{{ $carrosDisp->modelo }}</td>
-                        <td>{{ $carrosDisp->placa }}</td>
-                        <td>{{ $carrosDisp->cor }}</td>
+                        <td>{{ $carroDisp->marca }}</td>
+                        <td>{{ $carroDisp->modelo }}</td>
+                        <td>{{ $carroDisp->placa }}</td>
+                        <td>{{ $carroDisp->cor }}</td>
                         <td>
                             <!-- botão visualização -->
-                            <a href="{{ route('carros.show', $carrosDisp->placa) }}" class="btn btn-primary btn-xs">
+                            <a href="{{ route('carros.show', $carroDisp->placa) }}" class="btn btn-primary btn-xs">
                                 <i class="fas fa-fx fa-eye"></i>
                             </a>
 
                             <!-- botão alteração -->
-                            <a href="{{ route('carros.edit', $carrosDisp->placa) }}" class="btn btn-warning btn-xs">
+                            <a href="{{ route('carros.edit', $carroDisp->placa) }}" class="btn btn-warning btn-xs">
                                 <i class="fas fa-fx fa-pencil-alt"></i>
                             </a>
 
                             <!-- botão exclusão -->
-                            <form action="{{ route('carros.destroy', $carrosDisp->placa) }}" method="POST" onsubmit="return confirm('Você tem certeza que deseja excluir este registro?');" style="display: inline-block;">
+                            <form action="{{ route('carros.destroy', $carroDisp->placa) }}" method="POST" onsubmit="return confirm('Você tem certeza que deseja excluir este registro?');" style="display: inline-block;">
                                 <input type="hidden" name="_method" value="DELETE">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <button type="submit" class="btn btn-xs btn-danger">
@@ -87,25 +87,25 @@
                 </thead>
 
                 <tbody>
-                    <@foreach($carrosIndisp as $carrosIndisp)>
+                    <@foreach($carrosIndisp as $carroIndisp)>
                     <tr>
-                        <td>{{ $carrosIndisp->marca }}</td>
-                        <td>{{ $carrosIndisp->modelo }}</td>
-                        <td>{{ $carrosIndisp->placa }}</td>
-                        <td>{{ $carrosIndisp->cor }}</td>
+                        <td>{{ $carroIndisp->marca }}</td>
+                        <td>{{ $carroIndisp->modelo }}</td>
+                        <td>{{ $carroIndisp->placa }}</td>
+                        <td>{{ $carroIndisp->cor }}</td>
                         <td>
                             <!-- botão visualização -->
-                            <a href="{{ route('carros.show', $carrosIndisp->placa) }}" class="btn btn-primary btn-xs">
+                            <a href="{{ route('carros.show', $carroIndisp->placa) }}" class="btn btn-primary btn-xs">
                                 <i class="fas fa-fx fa-eye"></i>
                             </a>
 
                             <!-- botão alteração -->
-                            <a href="{{ route('carros.edit', $carrosIndisp->placa) }}" class="btn btn-warning btn-xs">
+                            <a href="{{ route('carros.edit', $carroIndisp->placa) }}" class="btn btn-warning btn-xs">
                                 <i class="fas fa-fx fa-pencil-alt"></i>
                             </a>
 
                             <!-- botão exclusão -->
-                            <form action="{{ route('carros.destroy', $carrosIndisp->placa) }}" method="POST" onsubmit="return confirm('Você tem certeza que deseja excluir este registro?');" style="display: inline-block;">
+                            <form action="{{ route('carros.destroy', $carroIndisp->placa) }}" method="POST" onsubmit="return confirm('Você tem certeza que deseja excluir este registro?');" style="display: inline-block;">
                                 <input type="hidden" name="_method" value="DELETE">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <button type="submit" class="btn btn-xs btn-danger">
@@ -146,25 +146,25 @@
                 </thead>
 
                 <tbody>
-                    <@foreach($carrosAlugados as $carrosAlugados)>
+                    <@foreach($carrosAlugados as $carroAlugado)>
                     <tr>
-                        <td>{{ $carrosAlugados->marca }}</td>
-                        <td>{{ $carrosAlugados->modelo }}</td>
-                        <td>{{ $carrosAlugados->placa }}</td>
-                        <td>{{ $carrosAlugados->cor }}</td>
+                        <td>{{ $carroAlugado->marca }}</td>
+                        <td>{{ $carroAlugado->modelo }}</td>
+                        <td>{{ $carroAlugado->placa }}</td>
+                        <td>{{ $carroAlugado->cor }}</td>
                         <td>
                             <!-- botão visualização -->
-                            <a href="{{ route('carros.show', $carrosIndisp->placa) }}" class="btn btn-primary btn-xs">
+                            <a href="{{ route('carros.show', $carroAlugado->placa) }}" class="btn btn-primary btn-xs">
                                 <i class="fas fa-fx fa-eye"></i>
                             </a>
 
                             <!-- botão alteração -->
-                            <a href="{{ route('carros.edit', $carrosIndisp->placa) }}" class="btn btn-warning btn-xs">
+                            <a href="{{ route('carros.edit', $carroAlugado->placa) }}" class="btn btn-warning btn-xs">
                                 <i class="fas fa-fx fa-pencil-alt"></i>
                             </a>
 
                             <!-- botão exclusão -->
-                            <form action="{{ route('carros.destroy', $carrosIndisp->placa) }}" method="POST" onsubmit="return confirm('Você tem certeza que deseja excluir este registro?');" style="display: inline-block;">
+                            <form action="{{ route('carros.destroy', $carroAlugado->placa) }}" method="POST" onsubmit="return confirm('Você tem certeza que deseja excluir este registro?');" style="display: inline-block;">
                                 <input type="hidden" name="_method" value="DELETE">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <button type="submit" class="btn btn-xs btn-danger">

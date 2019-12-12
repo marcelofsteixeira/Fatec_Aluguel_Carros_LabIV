@@ -19,6 +19,7 @@ class CreateIncidenteTable extends Migration
             $table->date('data', 15);
             $table->longText('descricao', 500);
             $table->decimal('multa', 15, 2);
+            $table->timestamps();
         });
 
         Schema::table('incidente', function($table) {
