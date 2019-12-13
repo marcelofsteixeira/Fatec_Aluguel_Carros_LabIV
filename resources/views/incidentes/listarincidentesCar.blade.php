@@ -51,8 +51,6 @@
                                 <button type="submit" class="btn btn-xs btn-danger"><i class="fas fa-fx fa-trash-alt"></i></button>
                             </form>
 
-                            <button type="button" onclick="window.location='{{ route("listarInc",array($incidente->aluguel->carro_id)) }}';" class="btn btn-info btn-xs" title="Listar Incidentes">
-
 
                         </td>
                     </tr>
