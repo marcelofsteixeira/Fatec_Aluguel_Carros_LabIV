@@ -24,4 +24,11 @@ class Carro extends Model
     {
         return $this->hasMany('App\Aluguel');
     }
+    
+    public static function inserirInc($placa){
+        $carro = Carro::find($placa);
+        $carro->disponivel= 0;
+        $carro->save();
+    }
+    
 }

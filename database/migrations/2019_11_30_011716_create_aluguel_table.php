@@ -23,9 +23,6 @@ class CreateAluguelTable extends Migration
             $table->date('data_entrega_esperada');
             $table->date('data_entrega')->nullable();
             $table->timestamps();
-            $table->foreign('cliente_id')->references('cpf')->on('cliente');
-            $table->foreign('carro_id')->references('placa')->on('carro');
-            $table->foreign('funcionario_id')->references('cpf')->on('funcionario');
         });
     }
 

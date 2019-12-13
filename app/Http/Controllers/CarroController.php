@@ -29,7 +29,7 @@ class CarroController extends Controller
      */
     public function index()
     {
-       $carrosDisp = DB::table('Carro')->where([
+       $carrosDisp = DB::table('carro')->where([
         ['disponivel', true],
         ['alugado', false],
         ])->get();
@@ -37,7 +37,7 @@ class CarroController extends Controller
         $carrosIndisp = Carro::all()->where('disponivel', false);
         $carrosAlugados = Carro::all()->where('alugado', true);
     
-        return view('carros.index', compact('carrosDisp','carrosIndisp','carrosAlugados'));
+        return view('carros.index', compact("carrosDisp","carrosIndisp","carrosAlugados"));
     }
 
     /**
@@ -127,9 +127,29 @@ class CarroController extends Controller
     {
         Carro::destroy($placa);
 
-        $carros = Carro::all();
+        $carrosDisp = DB::table('carro')->where([
+        ['disponivel', true],
+        ['alugado', false],
+        ])->get();
+    
+        $carrosIndisp = Carro::all()->where('disponivel', false);
+        $carrosAlugados = Carro::all()->where('alugado', true);
+        
+        return view('carros.index', compact("carrosDisp","carrosIndisp","carrosAlugados"));
+    }
 
-        return view('carros.index', compact('carros'));
+    public static function inserirInc($placa)
+    {
+        Carro::inserirInc($placa);
+        $carrosDisp = DB::table('carro')->where([
+        ['disponivel', true],
+        ['alugado', false],
+        ])->get();
+        
+        $carrosIndisp = Carro::all()->where('disponivel', false);
+        $carrosAlugados = Carro::all()->where('alugado', true);
+            
+        return view('carros.index', compact("carrosDisp","carrosIndisp","carrosAlugados"));
     }
 
     // public function disponibilizar($placa)

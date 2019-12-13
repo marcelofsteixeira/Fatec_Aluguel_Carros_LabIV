@@ -12,7 +12,7 @@
             Lista de carros disponiveis
             <div class="pull-right">
                 <a href="{{ route('carros.index') }}" class="btn btn-info"><i class="fas fa-fx fa-sync-alt"></i> Atualizar a tela</a>
-                <a href="{{ route('carros.create') }}" class="btn btn-success"><i class="fas fa-fx fa-plus"></i> Incluir novo registro</a>
+                <a href="{{ route('carros.create') }}" class="btn btn-success"><i class="fas fa-fx fa-plus"></i> Incluir novo carro</a>
             </div>
         </div>
 
@@ -55,6 +55,12 @@
                                 </button>
                             </form>
 
+                            <form onsubmit="return confirm('Indisponibilizar carro?');" style="display: inline-block;">
+                            <button type="button" onclick="alert('Indisponibilizando carro'); window.location='{{ route("indCar",array($carroDisp->placa)) }}';" class="btn btn-danger btn-xs" title="Indisponibilizar Carro">
+                                <i class="fas fa-car-crash"></i>
+                            </button>
+                            </form>
+                        
                         </td>
                     </tr>
                     <@endforeach>
@@ -70,7 +76,7 @@
             Lista de carros indisponiveis
             <div class="pull-right">
                 <a href="{{ route('carros.index') }}" class="btn btn-info"><i class="fas fa-fx fa-sync-alt"></i> Atualizar a tela</a>
-                <a href="{{ route('carros.create') }}" class="btn btn-success"><i class="fas fa-fx fa-plus"></i> Incluir novo registro</a>
+                <a href="/incidentes/create" class="btn btn-success"><i class="fas fa-fx fa-plus"></i> Registrar incidente</a>
             </div>
         </div>
 
@@ -129,7 +135,7 @@
             Lista de carros alugados
             <div class="pull-right">
                 <a href="{{ route('carros.index') }}" class="btn btn-info"><i class="fas fa-fx fa-sync-alt"></i> Atualizar a tela</a>
-                <a href="{{ route('carros.create') }}" class="btn btn-success"><i class="fas fa-fx fa-plus"></i> Incluir novo registro</a>
+                <a href="/alugueis/create" class="btn btn-success"><i class="fas fa-fx fa-plus"></i> Incluir novo aluguel</a>
             </div>
         </div>
 

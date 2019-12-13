@@ -38,6 +38,8 @@ Route::get('/encerrarAluguel/{id}', 'AluguelController@encerrarAluguel')->name('
 
 Route::resource('carros', 'CarroController');
 
+Route::get('/indisponibilizar/{placa}','CarroController@inserirInc')->name('indCar');
+
 Route::resource('alugueis', 'AluguelController');
 
 Route::resource('clientes', 'ClienteController');

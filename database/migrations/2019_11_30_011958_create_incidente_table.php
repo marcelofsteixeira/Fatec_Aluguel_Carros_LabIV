@@ -22,9 +22,9 @@ class CreateIncidenteTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('incidente', function($table) {
+        /*Schema::table('incidente', function($table) {
             $table->foreign('aluguel_id')->references('id')->on('aluguel');
-        });
+        });*/
     }
 
     /**
