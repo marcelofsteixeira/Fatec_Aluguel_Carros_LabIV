@@ -12,7 +12,6 @@
             Lista de incidentes do carro {{ $aluguel->carro->marca }} {{ $aluguel->carro->modelo }} {{ $aluguel->carro->cor }} pelo cliente: {{ $aluguel->cliente->nome }} (CPF:{{ $aluguel->cliente->cpf }}) em {{ $aluguel->data_aluguel }}
             <div class="pull-right">
                 <a href="{{ route('incidentes.index') }}" class="btn btn-info"><i class="fas fa-fx fa-sync-alt"></i> Atualizar a tela</a>
-                <a href="{{ route('incidentes.create') }}" class="btn btn-success"><i class="fas fa-fx fa-plus"></i> Incluir novo registro</a>
             </div>
         </div>
 
