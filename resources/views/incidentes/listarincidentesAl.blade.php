@@ -1,17 +1,18 @@
 @extends('adminlte::page')
 
-@section('title', 'Incidentes')
+@section('title', 'Dados do Veículo')
 
 @section('content_header')
-    <h1 style="color:blue">Incidentes</h1>
+<h1>Lista de Incidentes</h1>
 @stop
 
 @section('content')
-    <div class="panel panel-default">
+<div class="panel panel-default">
         <div class="panel-heading clearfix">
-            Lista de incidentes
+            Lista de incidentes do carro {{ $aluguel->carro->marca }} {{ $aluguel->carro->modelo }} {{ $aluguel->carro->cor }} pelo cliente: {{ $aluguel->cliente->nome }} (CPF:{{ $aluguel->cliente->cpf }}) em {{ $aluguel->data_aluguel }}
             <div class="pull-right">
                 <a href="{{ route('incidentes.index') }}" class="btn btn-info"><i class="fas fa-fx fa-sync-alt"></i> Atualizar a tela</a>
+                <a href="{{ route('incidentes.create') }}" class="btn btn-success"><i class="fas fa-fx fa-plus"></i> Incluir novo registro</a>
             </div>
         </div>
 
@@ -19,8 +20,6 @@
             <table id="table-incidentes" class="table table-bordered table-hover table-striped">
                 <thead>
                     <tr>
-                        <th>Carro</th>
-                        <th>Cliente</th>
                         <th>Data</th>
                         <th>Descrição</th>
                         <th>Multa</th>
@@ -31,8 +30,6 @@
                 <tbody>
                     <@foreach($incidentes as $incidente)>
                     <tr>
-                        <td>{{ $incidente->aluguel->carro->marca }} {{ $incidente->aluguel->carro->modelo }} {{ $incidente->aluguel->carro->cor }} ({{ $incidente->aluguel->carro->placa }})  </td>
-                        <td>{{ $incidente->aluguel->cliente->nome }} (CPF:{{ $incidente->aluguel->cliente->cpf }})</td>
                         <td>{{ $incidente->data }}</td>
                         <td>{{ $incidente->descricao }}</td>
                         <td>R${{ $incidente->multa }}</td>
@@ -54,6 +51,7 @@
                                 <button type="submit" class="btn btn-xs btn-danger"><i class="fas fa-fx fa-trash-alt"></i></button>
                             </form>
 
+
                         </td>
                     </tr>
                     <@endforeach>
@@ -67,13 +65,4 @@
 @stop
 
 @section('js')
-<script>
-$(document).ready(function() {
-    $('#table-incidentes').DataTable({
-        language: {
-            url: "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json",
-        },
-   });
-});
-</script>
 @stop

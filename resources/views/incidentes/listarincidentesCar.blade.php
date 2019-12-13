@@ -7,12 +7,12 @@
 @stop
 
 @section('content')
+
 <div class="panel panel-default">
         <div class="panel-heading clearfix">
-            Lista de incidentes do carro {{ $aluguel->carro->marca }} {{ $aluguel->carro->modelo }} {{ $aluguel->carro->cor }} pelo cliente: {{ $aluguel->cliente->nome }} (CPF:{{ $aluguel->cliente->cpf }})
+            Lista de incidentes do carro {{ $carro->marca }} {{ $carro->modelo }} {{ $carro->cor }}
             <div class="pull-right">
                 <a href="{{ route('incidentes.index') }}" class="btn btn-info"><i class="fas fa-fx fa-sync-alt"></i> Atualizar a tela</a>
-                <a href="{{ route('incidentes.create') }}" class="btn btn-success"><i class="fas fa-fx fa-plus"></i> Incluir novo registro</a>
             </div>
         </div>
 
@@ -21,6 +21,7 @@
                 <thead>
                     <tr>
                         <th>Data</th>
+                        <th>Cliente</th>
                         <th>Descrição</th>
                         <th>Multa</th>
                         <th>Ações</th>
@@ -31,6 +32,7 @@
                     <@foreach($incidentes as $incidente)>
                     <tr>
                         <td>{{ $incidente->data }}</td>
+                        <td>{{ $incidente->aluguel->cliente->nome }}</td>
                         <td>{{ $incidente->descricao }}</td>
                         <td>R${{ $incidente->multa }}</td>
                         <td>
@@ -50,8 +52,6 @@
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <button type="submit" class="btn btn-xs btn-danger"><i class="fas fa-fx fa-trash-alt"></i></button>
                             </form>
-
-
                         </td>
                     </tr>
                     <@endforeach>
@@ -59,6 +59,7 @@
             </table>
         </div>
     </div>
+                
 @stop
 
 @section('css')

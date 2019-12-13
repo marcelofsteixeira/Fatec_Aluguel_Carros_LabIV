@@ -55,8 +55,12 @@
                                     <i class="fas fa-fx fa-trash-alt"></i>
                                 </button>
                             </form>
+                            
+                            <button type="button" onclick="window.location='{{ route("listarIncCar",array($carroDisp->placa)) }}';" class="btn btn-light btn-xs" title="Listar Incidentes do Carro">
+                            <i class="fas fa-truck-pickup"></i>
+                            </button>
 
-                            <button type="button" onclick="confirm('Indisponibilizar carro {{ $carroDisp->marca }} {{ $carroDisp->modelo }} {{ $carroDisp->cor }}?'); window.location='{{ route("dispCar",array($carroDisp->placa)) }}';" class="btn btn-secondary btn-xs" title="Indisponibilizar Carro">
+                            <button type="button" onclick="confirm('Indisponibilizar carro {{ $carroDisp->marca }} {{ $carroDisp->modelo }} {{ $carroDisp->cor }}?'); window.location='{{ route("dispCar",array($carroDisp->placa)) }}';" class="btn btn-warning btn-xs" title="Indisponibilizar Carro">
                                 <i class="fas fa-car-crash"></i>
                             </button>
                         
@@ -113,6 +117,11 @@
                                     <i class="fas fa-fx fa-trash-alt"></i>
                                 </button>
                             </form>
+
+                            <button type="button" onclick="window.location='{{ route("listarIncCar",array($carroIndisp->placa)) }}';" class="btn btn-light btn-xs" title="Listar Incidentes do Carro">
+                            <i class="fas fa-truck-pickup"></i>
+                            </button>
+
                             <button type="button" onclick="confirm('Disponibilizar carro {{ $carroIndisp->marca }} {{ $carroIndisp->modelo }} {{ $carroIndisp->cor }}?'); window.location='{{ route("dispCar",array($carroIndisp->placa)) }}';" class="btn btn-success btn-xs" title="Disponibilizar Carro">
                                 <i class="fas fa-car-alt"></i>
                             </button>
@@ -170,6 +179,10 @@
                                     <i class="fas fa-fx fa-trash-alt"></i>
                                 </button>
                             </form>
+
+                            <button type="button" onclick="window.location='{{ route("listarIncCar",array($carroAlugado->placa)) }}';" class="btn btn-light btn-xs" title="Listar Incidentes do Carro">
+                            <i class="fas fa-truck-pickup"></i>
+                            </button>
 
                         </td>
                     </tr>

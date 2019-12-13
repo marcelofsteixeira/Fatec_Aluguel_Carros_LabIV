@@ -60,7 +60,7 @@
                                 </button>
                             </form>
 
-                            <button type="button" onclick="window.location='{{ route("listarincal", array($aluguel->id)) }}';" class="btn btn-light btn-xs" title="Listar Incidentes">
+                            <button type="button" onclick="window.location='{{ route("listarIncAl",array($aluguel->id)) }}';" class="btn btn-light btn-xs" title="Listar Incidentes do Aluguel">
                             <i class="fas fa-truck-pickup"></i>
                             </button>
 
