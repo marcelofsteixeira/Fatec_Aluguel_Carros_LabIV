@@ -80,7 +80,7 @@
             <div class="col-sm-3">
                 <h3>Data da Entrega</h3>
             </div>
-                @if(date('Y', strtotime($aluguel->data_entrega)) < 1900)
+                @if(is_null($aluguel->data_entrega))
                 <div class="col-sm-10" style="color:blue;">Não Entregue</div>
                 @else
                 <div class="col-sm-10" style="color:blue;">{{$aluguel->data_entrega}}</div>

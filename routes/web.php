@@ -38,7 +38,11 @@ Route::get('/encerrarAluguel/{id}', 'AluguelController@encerrarAluguel')->name('
 
 Route::resource('carros', 'CarroController');
 
-Route::get('/indisponibilizar/{placa}','CarroController@inserirInc')->name('indCar');
+Route::get('/indisponibilizar/{placa}','CarroController@dispOuIndispCarro')->name('dispCar');
+
+Route::get('/listarIncidentesCar/{id}', 'IncidenteController@listarIncidentesCarro')->name('listarIncCar');
+
+Route::get('/listarIncidentesAl/{id}', 'IncidenteController@listarIncidentesAluguel')->name('listarIncAl');
 
 Route::resource('alugueis', 'AluguelController');
 

@@ -77,7 +77,6 @@
                     <label for="data_esperada">Data de Entrega</label>                    
                     <input type="text" id="data_entrega_esperada" class="date form-control" onchange="inseriuData(event);">
                     <input type="text" name="data_entrega_esperada" id="form_data_entrega_esperada" class="form-control" required readonly  style="display: none;">
-                    <input type="text" name="data_entrega" id="form_data_entrega" class="form-control" required readonly  style="display: none;">
                 </div>
             </div>
 
@@ -178,10 +177,8 @@ function inseriuData(dataPicker){
         document.getElementById('form_funcionario_id').value = $("#funcionario_select").find('option:selected').attr('value');
         document.getElementById('form_cliente_id').value = $("#cliente_select").find('option:selected').attr('value');
         document.getElementById('form_preco').value = aluguelPreco;
-        document.getElementById('form_data_aluguel').value = formataDataMysql(hoje)
+        document.getElementById('form_data_aluguel').value = formataDataMysql(hoje);
         document.getElementById('form_data_entrega_esperada').value = formataDataMysql(dataEscolhidaDate);
-        dataZero = new Date(0,0,0);
-        document.getElementById('form_data_entrega').value = formataDataMysql(dataZero);
         liberaBotaoCriar();
     }
 }

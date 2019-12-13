@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Incidente;
+use App\Aluguel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -122,5 +123,22 @@ class IncidenteController extends Controller
         $incidentes = Incidente::all();
 
         return view('incidentes.index', compact('incidentes'));
+    }
+
+    public function listarIncidentesCarro($id)
+    {
+        $incidentes = collect();
+        $alugueis = Incidente::all()->where('carro_id', $id);
+        foreach ($alugueis as $aluguel) {
+            $incidentes->add(Incidente::all()->where('aluguel_id', $aluguel->id));
+        }
+        return view('incidentes.listarincidentesCarro', compact('incidentes'));
+    }
+
+    public function listarIncidentesAluguel($id)
+    {
+        $incidentes = Incidente::all()->where('aluguel_id', $id);
+        $aluguel = Aluguel::find($id);
+        return view('incidentes.listarincidentesCar', compact('incidentes', 'aluguel'));
     }
 }

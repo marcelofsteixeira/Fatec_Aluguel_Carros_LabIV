@@ -46,7 +46,10 @@ class AluguelController extends Controller
     public function create()
     {
         $clientes = Cliente::all();
-        $carros = Carro::all();
+        $carros = DB::table('Carro')->where([
+            ['disponivel', true],
+            ['alugado', false],
+            ])->get();
         $funcionarios = Funcionario::all();
         return view('alugueis.create', compact ('clientes', 'carros', 'funcionarios'));
     }
@@ -60,7 +63,7 @@ class AluguelController extends Controller
     public function store(Request $request)
     {
         Aluguel::create($request->all());
-
+        Carro::alugar($request->carro_id);
         return redirect()->route('alugueis.index');
     }
 

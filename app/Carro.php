@@ -25,9 +25,23 @@ class Carro extends Model
         return $this->hasMany('App\Aluguel');
     }
     
-    public static function inserirInc($placa){
+    public static function dispOuIndispCarro($placa){
         $carro = Carro::find($placa);
-        $carro->disponivel= 0;
+        $carro->disponivel= !$carro->disponivel;
+        $carro->save();
+    }
+
+    public static function alugar($placa)
+    {
+        $carro = Carro::find($placa);
+        $carro->alugado=true;
+        $carro->save();
+    }
+
+    public static function encerrarAluguel($placa)
+    {
+        $carro = Carro::find($placa);
+        $carro->alugado=false;
         $carro->save();
     }
     

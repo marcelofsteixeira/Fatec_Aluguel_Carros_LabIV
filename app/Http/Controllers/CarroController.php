@@ -138,9 +138,9 @@ class CarroController extends Controller
         return view('carros.index', compact("carrosDisp","carrosIndisp","carrosAlugados"));
     }
 
-    public static function inserirInc($placa)
+    public static function dispOuIndispCarro($placa)
     {
-        Carro::inserirInc($placa);
+        Carro::dispOuIndispCarro($placa);
         $carrosDisp = DB::table('carro')->where([
         ['disponivel', true],
         ['alugado', false],
@@ -152,17 +152,4 @@ class CarroController extends Controller
         return view('carros.index', compact("carrosDisp","carrosIndisp","carrosAlugados"));
     }
 
-    // public function disponibilizar($placa)
-    // {
-    //     $status =  Carro::where('placa', $placa)->first();
-
-    //     if($status->disponivel == true){
-    //         Carro::where('placa', $placa)->update(array('disponivel' => false));
-    //         return view('carros.index', compact('carros'));
-    //     }
-        
-    //     Carro::where('placa', $placa)->update(array('disponivel' => true));
-    //     return view('carros.index', compact('carros'));
-        
-    // }
 }

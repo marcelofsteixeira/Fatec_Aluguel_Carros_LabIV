@@ -3,13 +3,12 @@
 @section('title', 'Carros Alugados')
 
 @section('content_header')
-    <h1 style="color:blue">Carros Alugados</h1>
+    <h1 style="color:blue">Histórico de Aluguéis (Ativos e Inativos)</h1>
 @stop
 
 @section('content')
     <div class="panel panel-default">
         <div class="panel-heading clearfix">
-            Lista de Aluguéis
             <div class="pull-right">
                 <a href="{{ route('alugueis.index') }}" class="btn btn-info"><i class="fas fa-fx fa-sync-alt"></i> Atualizar a tela</a>
                 <a href="{{ route('alugueis.create') }}" class="btn btn-success"><i class="fas fa-fx fa-plus"></i> Incluir novo registro</a>
@@ -20,6 +19,7 @@
             <table id="table-alugueis" class="table table-bordered table-hover table-striped">
                 <thead>
                     <tr>
+                        <th>Finalizado</th>
                         <th>Cliente</th>
                         <th>Funcionário</th>
                         <th>Carro</th>
@@ -29,8 +29,13 @@
                 </thead>
 
                 <tbody>
-                    <@foreach($alugueis as $aluguel)>
+                    <@foreach($alugueis as $aluguel)>                  
                     <tr>
+                        @if(is_null($aluguel->data_entrega))
+                        <td>Não</td>
+                         @else
+                        <td>Sim</td>
+                        @endif
                         <td>{{ $aluguel->cliente->nome }} (CPF: {{ $aluguel->cliente->cpf }})</td>
                         <td>{{ $aluguel->funcionario->nome }} (CPF: {{ $aluguel->funcionario->cpf }})</td>
                         <td>{{ $aluguel->carro->marca }} {{ $aluguel->carro->modelo }} {{ $aluguel->carro->cor }} ({{ $aluguel->carro->placa }})</td>
@@ -55,17 +60,21 @@
                                 </button>
                             </form>
 
+                            <button type="button" onclick="window.location='{{ route("listarIncAl",array($aluguel->id)) }}';" class="btn btn-light btn-xs" title="Listar Incidentes">
+                            <i class="fas fa-truck-pickup"></i>
+                            </button>
+
                             <!-- botão incidentes -->
-                            @if(date('Y', strtotime($aluguel->data_entrega)) < 1900)
+                            @if(is_null($aluguel->data_entrega))
                             <button data-toggle="modal" data-target="#incidenteModal" class="btn btn-danger btn-xs" title="Inserir Incidente">
                                 <i class="fas fa-car-crash"></i>
                             </button>
                             @endif
 
                             <!-- botão encerrar aluguel -->
-                            @if(date('Y', strtotime($aluguel->data_entrega)) < 1900)
+                            @if(is_null($aluguel->data_entrega))
                             <form onsubmit="return confirm('Encerrar Aluguel?');" style="display: inline-block;">
-                            <button type="button" onclick="alert('Encerrando aluguel do carro {{ $aluguel->carro->modelo }} {{ $aluguel->carro->cor }} do cliente {{ $aluguel->cliente->nome }}'); window.location='{{ route("encAlu",array($aluguel->id)) }}';" class="btn btn-info btn-xs" title="Finalizar Aluguel">
+                            <button type="button" onclick="confirm('Encerrar aluguel do carro {{ $aluguel->carro->modelo }} {{ $aluguel->carro->cor }} do cliente {{ $aluguel->cliente->nome }}?'); window.location='{{ route("encAlu",array($aluguel->id)) }}';" class="btn btn-info btn-xs" title="Finalizar Aluguel">
                                 <i class="fas fa-car-side"></i>
                             </button>
                             </form>

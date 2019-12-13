@@ -48,6 +48,7 @@ class Aluguel extends Model
         $aluguel = Aluguel::find($id);
         $date = Carbon::now();
         $aluguel->data_entrega= $date;
+        Carro::encerrarAluguel($aluguel->carro_id);
         $aluguel->save();
     }
 }
