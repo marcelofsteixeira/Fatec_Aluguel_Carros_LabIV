@@ -1,33 +1,73 @@
 <h2 align="center">Projeto LAB IV - Larag-On-Wheels</h2>
+<h3> "A aplicação onde quem crasha é o carro, e não o servidor!"</h3>
 <br>
 <ul>
-	<li>O intutito desse projeto é criar uma aplicação web para o gerenciamento de uma empresa que presta serviços de aluguel de carros, com os conhecimentos adquiridos nas aulas de LAB IV do 4º Sem. de B.D. da FATEC Prof. Jessen Vidal, referentes ao servidor de aplicações <a href="https://laragon.org" target="_blank">Laragon</a> e ao framework para PHP <a href="https://laravel.com" target="_blank">Laravel</a>.
+	<li>
+		
+		Aplicação web para o gerenciamento de uma empresa que presta serviços de aluguel de carros baseada no ambiente Laragon e na linguagem PHP, feita para a matéria de LAB IV do 4º Sem. de B.D. da FATEC São José dos Campos - Prof. Jessen Vidal.
+		<a href="https://laragon.org" target="_blank">Laragon</a>
+		<a href="https://laravel.com" target="_blank">Laravel</a>.
 	</li>
 </ul>
 <br>
-<p><strong>AFAZERES:</strong></p>
+<p><strong>Instalação do projeto:</strong></p>
 <table>
 	<tr>
-		<th>Incluir Funcionalidades</th>
+		<th>Criação de um banco MySQL no IP local, porta 3306, conexão com user 'root' e senha 'root' para a database 'aluguelcarros</th>
 	</tr>
 	<tr>
-		<td>Duplicação de tabela</td>
+		<td>Execução do comando 'composer install:', para instalação das dependências do projeto</td>
 	</tr>
 	<tr>
-		<td>Botão de indisponibilizar carro</td>
+		<td>Execução do comando 'php artisan migrate;', para criação das tabelas</td>
 	</tr>
 	<tr>
-		<td>Alteração das tabelas de Carros</td>
+		<td>Execução do comando 'php artisan db:seed;', para preenchimento das tabelas com dados de exemplos </td>
 	</tr>
 	<tr>
-		<td>Alguma coisa</td>
+		<td>Clique no botão 'Start All' na interface gráfica do Laragon, para lançamento do banco e do servidor da aplicação</td>
 	</tr>
 	<tr>
-		<td>eu não lembro de cabeça então vou escrever qualquer coisa</td>
+		<td>Acesso à página pelo endereço 'http://fatec_aluguel_carros_labiv.test/'</td>
+	</tr>
+	
+</table>
+<br>
+<p><strong>Funções do projeto:</strong></p>
+<table>
+	<tr>
+		<th>Criação de usuário e login</th>
 	</tr>
 	<tr>
-		<td>“Era isto a vida? — direi à morte. Pois bem: repita-se!”</td>
+		<td>Criação e remoção de clientes e funcionários da empresa, além de carros para serem alugados</td>
+	</tr>
+	<tr>
+		<td>Criação de aluguéis, com cálculo do preço baseado nas diárias dos carros</td>
+	</tr>
+	<tr>
+		<td>Finalização dos aluguéis baseada na data atual, disponibilizando o carro utilizado para alugúeis futuros</td>
+	</tr>
+	<tr>
+		<td>Registro de Incidentes para aluguéis ativos, que podem ser visualizados em lista para cada aluguel ou cada carro</td>
+	</tr>
+	<tr>
+		<td>Indisponibilização de carros, para que não possam ser usados em novos aluguéis, e disponibilização para voltarem a serem utilizados </td>
 	</tr>
 </table>
 <br>
-Gist com o antigo tutorial de configuração inicial do projeto no Laragon: <a href="https://gist.github.com/JeanLPierro/b7df804ef35def2f8d45c5d9ab2b2cb3">Tutorial</a>
+<p><strong>Alunos:</strong></p>
+<table>
+	<tr>
+		<th>Jean Pierro
+	</tr>
+	<tr>
+		<td>Jéssica Rosado</td>
+	</tr>
+	<tr>
+		<td>Marcelo Teixeira</td>
+	</tr>
+	<tr>
+		<td>Rodrigo Prado</td>
+	</tr>
+</table>
+
