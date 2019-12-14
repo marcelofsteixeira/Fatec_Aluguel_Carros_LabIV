@@ -9,16 +9,16 @@
 <p><strong>Instalação do projeto:</strong></p>
 <table>
 	<tr>
-		<td>Criação de um banco MySQL no IP local, porta 3306, conexão com user 'root' e senha 'root' para a database 'aluguelcarros</td>
+		<td>Criação de um banco MySQL no IP local, porta 3306, conexão com user 'root' e senha 'root' para a database 'aluguelcarros'</td>
 	</tr>
 	<tr>
-		<td>Execução do comando 'composer install:', para instalação das dependências do projeto</td>
+		<td>Execução do comando 'composer install', para instalação das dependências do projeto</td>
 	</tr>
 	<tr>
-		<td>Execução do comando 'php artisan migrate;', para criação das tabelas</td>
+		<td>Execução do comando 'php artisan migrate', para criação das tabelas</td>
 	</tr>
 	<tr>
-		<td>Execução do comando 'php artisan db:seed;', para preenchimento das tabelas com dados de exemplos </td>
+		<td>Execução do comando 'php artisan db:seed', para preenchimento das tabelas com dados de exemplos </td>
 	</tr>
 	<tr>
 		<td>Clique no botão 'Start All' na interface gráfica do Laragon, para lançamento do banco e do servidor da aplicação</td>
