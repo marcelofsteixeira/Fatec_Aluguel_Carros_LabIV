@@ -2,7 +2,7 @@
 <h3 align="center"> "A aplicação onde quem crasha é o carro, e não o servidor!"</h3>
 <br>
 <ul>
-	<li>Aplicação web para o gerenciamento de uma empresa que presta serviços de aluguel de carros baseada no ambiente Laragon e na linguagem PHP, feita para a matéria de LAB IV do 4º Sem. de B.D. da FATEC São José dos Campos - Prof. Jessen Vidal.<a href="https://laragon.org" target="_blank">Laragon</a><a href="https://laravel.com" target="_blank">Laravel</a>
+	<li>Aplicação web para o gerenciamento de uma empresa que presta serviços de aluguel de carros baseada no ambiente Laragon e na linguagem PHP, feita para a matéria de LAB IV do 4º Sem. de B.D. da FATEC São José dos Campos - Prof. Jessen Vidal.<br><a href="https://laragon.org" target="_blank">Laragon</a><br><a href="https://laravel.com" target="_blank">Laravel</a><br>
 	</li>
 </ul>
 <br>
