@@ -89,7 +89,7 @@ return [
     |
     */
 
-    'right_sidebar' => true,
+    'right_sidebar' => false,
     'right_sidebar_icon' => 'fas fa-cogs',
     'right_sidebar_theme' => 'dark',
     'right_sidebar_slide' => true,
@@ -128,10 +128,10 @@ return [
     */
 
     'menu' => [
-        [
+        /*[
             'text' => 'search',
             'search' => true,
-        ],
+        ],*/
         ['header' => 'Menu Lateral'],
         [
             'text' => 'blog',
@@ -196,9 +196,9 @@ return [
         ],*/
         ['header' => 'Gerenciamento de Aluguéis e Veículos'],
         [
-            'text'       => 'Histórico de Incidentes',
-            'url'     => '/incidentes',
-            'icon_color' => 'red',
+            'text'       => 'Lista de Carros',
+            'url'     => '/carros',
+            'icon_color' => 'green',
         ],
         [
             'text'       => 'Histórico de Alugueis',
@@ -207,9 +207,9 @@ return [
             'icon_color' => 'yellow',
         ],
         [
-            'text'       => 'Lista de Carros',
-            'url'     => '/carros',
-            'icon_color' => 'green',
+            'text'       => 'Histórico de Incidentes',
+            'url'     => '/incidentes',
+            'icon_color' => 'red',
         ],
     ],
 

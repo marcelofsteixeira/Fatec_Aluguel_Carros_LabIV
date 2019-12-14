@@ -24,4 +24,31 @@
             </li>
         </ul>
     </div>
+    <div class="modal fade" id="legal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="exampleModalLongTitle" style="text-align: center; color: red;">Galera do UNO&trade;</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="text-align: justify;">
+                <p><i class="fab fa-github-square fa-2x"></i><a href="https://github.com/JeanLPierro"  target="_blank"> Jean Pierro</a></p>
+                <p><i class="fab fa-github-square fa-2x"></i><a href="https://github.com/jesscahelen"  target="_blank"> Jessica Helen</a></p>
+                <p><i class="fab fa-github-square fa-2x"></i><a href="https://github.com/marcelofsteixeira"  target="_blank"> Marcelo Teixeira</a></p>
+                <p><i class="fab fa-github-square fa-2x"></i><a href="https://github.com/RodrigoPradoDaSilva"  target="_blank"> Rodrigo Prado</a></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Nice!</button>
+                <div>
+            </div>
+        </div>
+    </div>
+@stop
+
+@section('footer')
+    <div style="text-align: center;">
+        <em>Feito com &hearts; pela <a data-toggle="modal" data-target="#legal">Galera do UNO</a>&trade;</em>
+    </div>
 @stop
