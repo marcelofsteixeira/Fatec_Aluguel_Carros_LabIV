@@ -9,7 +9,7 @@
 <p><strong>Instalação do projeto:</strong></p>
 <table>
 	<tr>
-		<th>Criação de um banco MySQL no IP local, porta 3306, conexão com user 'root' e senha 'root' para a database 'aluguelcarros</th>
+		<td>Criação de um banco MySQL no IP local, porta 3306, conexão com user 'root' e senha 'root' para a database 'aluguelcarros</td>
 	</tr>
 	<tr>
 		<td>Execução do comando 'composer install:', para instalação das dependências do projeto</td>
@@ -32,7 +32,7 @@
 <p><strong>Funções do projeto:</strong></p>
 <table>
 	<tr>
-		<th>Criação de usuário e login</th>
+		<td>Criação de usuário e login</td>
 	</tr>
 	<tr>
 		<td>Criação e remoção de clientes e funcionários da empresa, além de carros para serem alugados</td>
@@ -54,7 +54,7 @@
 <p><strong>Alunos:</strong></p>
 <table>
 	<tr>
-		<th>Jean Pierro
+		<td>Jean Pierro</td>
 	</tr>
 	<tr>
 		<td>Jéssica Rosado</td>
